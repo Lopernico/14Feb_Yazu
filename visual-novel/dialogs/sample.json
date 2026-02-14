@@ -1,0 +1,12 @@
+{
+  "start": "start",
+  "nodes": [
+    { "id": "start", "speaker": "Narrador", "text": "Es 14 de febrero. Encuentras un sobre con una nota roja sobre la mesa.", "sprite": "Louie.png", "next": "note" },
+    { "id": "note", "speaker": "Nota", "text": "\"Si quieres descubrir un secreto, sigue tu corazón.\" ¿Qué haces?", "choices": [ { "text": "Leer la nota", "next": "read" }, { "text": "Ignorar y salir", "next": "ignore" } ] },
+    { "id": "read", "speaker": "Narrador", "text": "Dentro hay una llave con un pequeño corazón grabado.", "next": "choice2" },
+    { "id": "choice2", "speaker": "Amigo", "text": "¿Regresas al café o vas a buscar la puerta misteriosa?", "choices": [ { "text": "Ir al café", "next": "cafe" }, { "text": "Buscar la puerta", "next": "door" } ] },
+    { "id": "cafe", "speaker": "Narrador", "text": "En el café te espera una sorpresa y una sonrisa. Fin.", "next": null },
+    { "id": "door", "speaker": "Narrador", "text": "La llave abre un cofre lleno de cartas. Has encontrado el secreto. Fin.", "next": null },
+    { "id": "ignore", "speaker": "Narrador", "text": "Decides no tocar la nota. Caminas hacia la tarde, preguntándote \"qué hubiera pasado\". Fin.", "next": null }
+  ]
+}

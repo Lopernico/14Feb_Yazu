@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Visual Novel — San Valentín</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <main class="vn">
+        <div class="scene" id="scene">
+          <img id="sprite" class="sprite" src="assets/Louie.png" alt="sprite" loading="eager" decoding="sync" />
+          <div class="hearts" aria-hidden="true">
+            <div class="hearts-scroll">
+              <div class="hearts-track"></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="titleScreen" class="title-screen" role="dialog" aria-label="Pantalla de título">          <div class="particles" aria-hidden="true"></div>
+          <div class="floating-emojis" aria-hidden="true">
+            <span class="emoji e1">💖</span>
+            <span class="emoji e2">✨</span>
+            <span class="emoji e3">💕</span>
+            <span class="emoji e4">🌸</span>
+            <span class="emoji e5">💜</span>
+            <span class="emoji e6">✨</span>
+            <span class="emoji e7">💗</span>
+            <span class="emoji e8">🌙</span>
+            <span class="emoji e9">💝</span>
+            <span class="emoji e10">✨</span>
+            <span class="emoji e11">💖</span>
+            <span class="emoji e12">🌸</span>
+          </div>          <div class="title-content">
+            <h1 class="title-line1">un regalo de 14 de febrero</h1>
+            <h2 class="title-line2">dia del <span class="amor">amor</span> y la <span class="amistad">amistad</span></h2>
+            <p class="dedication">Dedicado a Yazumileth Moonserrat</p>
+            <blockquote class="quote">“Rara, pero en el buen sentido”</blockquote>
+            <div class="start-hint">Pulsa o toca para comenzar</div>
+          </div>
+        </div>
+
+        <div class="dialogue hidden" id="dialogue">
+          <div class="meta">
+            <div class="name" id="speaker">Narrador</div>
+            <div class="controls">
+              <button id="backBtn" title="Atrás">◀</button>
+              <button id="nextBtn" title="Siguiente">▶</button>
+            </div>
+          </div>
+
+          <div class="text" id="text"></div>
+          <div class="choices" id="choices" aria-live="polite"></div>
+        </div>
+      </main>
+    </div>
+
+    <audio id="sfxAudio" preload="auto"></audio>
+    <audio id="musicAudio" loop preload="auto"></audio>
+    <audio id="endSfxAudio" preload="auto"></audio>
+
+    <div id="audioControls" class="audio-controls">
+      <!-- Audio selection removed (configured from backend) -->
+      <div class="vols">
+        <label>Vol música <input id="musicVol" type="range" min="0" max="1" step="0.01" value="0.6"></label>
+        <label>Vol efectos <input id="sfxVol" type="range" min="0" max="1" step="0.01" value="0.9"></label>
+      </div>
+    </div>
+
+    <div id="endScreen" class="end-screen hidden" role="dialog" aria-label="Fin del juego">
+      <div class="end-content">
+        <h1 class="end-title">FIN DEL JUEGO</h1>
+        <div class="end-buttons">
+          <button id="restartBtn" class="btn">Reiniciar</button>
+          <button id="lastDecisionBtn" class="btn">Volver a la última decisión</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Final celebratory banner (shown after `final_verdadero`) -->
+    <div id="finalBanner" class="final-banner hidden" role="dialog" aria-label="Celebración final">
+      <div class="final-particles" aria-hidden="true"></div>
+      <div class="final-hearts" aria-hidden="true">
+        <div class="hearts-scroll">
+          <div class="hearts-track"></div>
+        </div>
+      </div>
+      <div class="final-content">
+        <div class="final-text">
+          <div class="final-main">
+            <div class="final-title">
+              <span class="final-name">YAZUMIMOON</span>
+              <div class="final-date">Feliz 14 de febrero.</div>
+            </div>
+            <div class="final-thanks">GRACIAS POR SIEMPRE SER TÚ MISMA.</div>
+          </div>
+          <div class="final-sub">(tu perfectamente imperfecta persona)</div>
+        </div>
+        <div class="final-actions">
+          <button id="finalContinue" class="btn">Continuar</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
